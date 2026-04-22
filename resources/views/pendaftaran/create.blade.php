@@ -6,7 +6,7 @@
 
         <div class="mb-8 text-center">
             <h1 class="text-4xl font-bold text-gray-900 mb-2">Formulir Pendaftaran</h1>
-            <p class="text-gray-500">PMB Online — Universitas Nusantara {{ date('Y') }}/{{ date('Y') + 1 }}</p>
+            <p class="text-gray-500">PMB Online — Telkom University Purwokerto {{ date('Y') }}/{{ date('Y') + 1 }}</p>
         </div>
 
         @if ($errors->any())
@@ -170,7 +170,7 @@
                         <label class="label-field">Jurusan :<span class="text-red-500">*</span></label>
                         <input type="text" name="jurusan_sekolah" value="{{ old('jurusan_sekolah') }}"
                             class="input-field @error('jurusan_sekolah') border-red-400 @enderror"
-                            placeholder="IPA / IPS " required>
+                            placeholder="IPA / IPS / Teknik" required>
                         @error('jurusan_sekolah') <p class="error-msg">{{ $message }}</p> @enderror
                     </div>
 

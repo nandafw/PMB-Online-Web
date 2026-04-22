@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="max-w-lg">
-    <a href="{{ route('admin.users.index') }}" class="text-sm text-blue-600 hover:underline mb-4 block">
+    <a href="{{ route('admin.users.index') }}" class="text-sm text-red-700 hover:underline mb-4 block">
         ← Kembali
     </a>
 
@@ -27,7 +27,7 @@
                 <input type="text" name="name"
                     value="{{ old('name', $user->name) }}"
                     required
-                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-red-700 outline-none">
             </div>
 
             <div>
@@ -35,13 +35,13 @@
                 <input type="email" name="email"
                     value="{{ old('email', $user->email) }}"
                     required
-                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-red-700 outline-none">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1.5">Role</label>
                 <select name="role"
-                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-red-700 outline-none">
 
                     <option value="mahasiswa" {{ old('role', $user->role) == 'mahasiswa' ? 'selected' : '' }}>
                         Mahasiswa
@@ -60,7 +60,7 @@
                 </label>
                 <input type="password" name="password"
                     minlength="8"
-                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                    class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-red-700 outline-none">
             </div>
 
             <div>
@@ -70,7 +70,7 @@
             </div>
 
             <button type="submit"
-                class="w-full py-3 bg-blue-700 text-white font-semibold rounded-xl hover:bg-blue-800 transition-all">
+                class="w-full py-3 bg-red-800 text-white font-semibold rounded-xl hover:bg-red-900 transition-all">
                 Update User
             </button>
 

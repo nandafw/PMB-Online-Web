@@ -8,12 +8,12 @@ use App\Http\Controllers\Admin\PendaftaranAdminController;
 use App\Http\Controllers\KabupatenController;
 use Illuminate\Support\Facades\Route;
 
-// ─── PUBLIC PAGES ────
+//PUBLIC
 Route::get('/',         [HomeController::class, 'index'])->name('home');
 Route::get('/tentang',  [HomeController::class, 'tentang'])->name('tentang');
 Route::get('/kontak',   [HomeController::class, 'kontak'])->name('kontak');
 
-// ─── AUTH ────
+//AUTH
 Route::middleware('guest')->group(function () {
     Route::get('/login',   [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login',  [AuthController::class, 'login']);
@@ -24,7 +24,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 
 Route::get('/api/kabupatens/{provinsi_id}', [KabupatenController::class, 'byProvinsi'])->name('api.kabupatens');
 
-// ─── USER (Calon Mahasiswa) ─────
+//USER (Calon Mahasiswa)
 Route::middleware('auth')->group(function () {
     Route::get('/pendaftaran',        [PendaftaranController::class, 'index'])->name('pendaftaran.index');
     Route::get('/pendaftaran/form',   [PendaftaranController::class, 'create'])->name('pendaftaran.create');
@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pendaftaran/{id}/cetak', [PendaftaranController::class, 'cetak'])->name('pendaftaran.cetak');
 });
 
-// ─── ADMIN ───
+//ADMIN
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/',  [DashboardController::class, 'index'])->name('dashboard');
 
